@@ -15,3 +15,19 @@ fs.writeFile(
   }
 );
 console.log(people, cars);
+if (!fs.existsSync("./assets")) {
+  fs.mkdir("./assets", (error) => {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("directory created");
+    }
+  });
+} else {
+  fs.rmdir("./assets", (error) => {
+    if (error) {
+      console.log(error);
+    }
+    console.log("THE FOLDER WAS DELETED SUCCESSFULY ");
+  });
+}
