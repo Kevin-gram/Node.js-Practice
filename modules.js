@@ -31,3 +31,12 @@ if (!fs.existsSync("./assets")) {
     console.log("THE FOLDER WAS DELETED SUCCESSFULY ");
   });
 }
+const readStream = fs.createReadStream("./blog2.txt");
+
+readStream.on("data", (chunk) => {
+  console.log(" ----New chunk is being created ---");
+  console.log(chunk.toString());
+});
+readStream.on("error", (error) => {
+  console.log(error);
+});
