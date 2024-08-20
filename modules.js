@@ -32,10 +32,15 @@ if (!fs.existsSync("./assets")) {
   });
 }
 const readStream = fs.createReadStream("./blog2.txt");
+const writeStream = fs.createWriteStream("./blog3.txt");
 
 readStream.on("data", (chunk) => {
   console.log(" ----New chunk is being created ---");
   console.log(chunk.toString());
+});
+writeStream.write("data", (chunk) => {
+  console.log("\nNEW CHUNK\n");
+  console.log(chunk);
 });
 readStream.on("error", (error) => {
   console.log(error);
