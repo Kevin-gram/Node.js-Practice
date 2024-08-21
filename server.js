@@ -8,12 +8,20 @@ const server = http.createServer((req, resp) => {
   switch (req.url) {
     case "/":
       path += "index.html";
+      resp.statusCode = 200;
       break;
     case "/about":
       path += "about.html";
+      resp.statusCode = 200;
+      break;
+    case "/about-me":
+      resp.statusCode = 301;
+      resp.setHeader("Location", "/about");
+      resp.end();
       break;
     default:
       path += "404.html";
+      resp.statusCode = 404;
       break;
   }
 
