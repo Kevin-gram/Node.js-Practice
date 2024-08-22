@@ -7,3 +7,6 @@ app.get("/", (req, resp) => {
 app.get("/about", (req, resp) => {
   resp.sendFile("./views/about.html", { root: __dirname });
 });
+app.get("/about-us", (req, resp) => {
+  resp.redirect("/about");
+});
