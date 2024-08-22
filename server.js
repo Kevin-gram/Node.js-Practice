@@ -1,9 +1,10 @@
 const http = require("http");
 const fs = require("fs");
-
+const _ = require("lodash");
 const server = http.createServer((req, resp) => {
   resp.setHeader("Content-Type", "text/html");
-
+  const num = _.randon();
+  console.log(num);
   let path = "./views/";
   switch (req.url) {
     case "/":
