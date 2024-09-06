@@ -3,7 +3,7 @@ const fs = require("fs");
 const _ = require("lodash");
 const server = http.createServer((req, resp) => {
   resp.setHeader("Content-Type", "text/html");
-  const num = _.randon();
+  const num = _.random();
   console.log(num);
   let path = "./views/";
   switch (req.url) {
@@ -37,4 +37,6 @@ const server = http.createServer((req, resp) => {
   });
 });
 
-server.listen(3000, "localhost", () => {});
+server.listen(3000, "localhost", () => {
+  console.log("listening for the request on the port 3000");
+});
