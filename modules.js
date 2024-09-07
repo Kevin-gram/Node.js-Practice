@@ -10,9 +10,7 @@ fs.readFile("./blog1.txt", (error, data) => {
 fs.writeFile(
   "./blog2.txt",
   "hello am the file crearted by the file System ",
-  () => {
-    console.log("File was created");
-  }
+  () => {}
 );
 console.log(people, cars);
 if (!fs.existsSync("./assets")) {
