@@ -36,7 +36,7 @@ app.post("/add-item", async (req, res) => {
 
   try {
     await newItem.save();
-    res.send("Item added successfully!");
+    res.send("added successfully!");
   } catch (err) {
     res.status(500).send("Failed to add item.");
   }
