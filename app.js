@@ -2,12 +2,16 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 
-const dbUri = "mongodb+srv://Nodejs:chico1234@nodejs.vbkfa.mongodb.net/";
-
 mongoose
-  .connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("MongoDB connected successfully"))
-  .catch((err) => console.log("MongoDB connection error:", err));
+  .connect(
+    "mongodb+srv://man:123@node.vbkfa.mongodb.net/user?retryWrites=true&w=majority&appName=Node"
+  )
+  .then(() => {
+    console.log("MongoDB connected successfully");
+  })
+  .catch((err) => {
+    console.error("MongoDB connection error:", err);
+  });
 
 app.set("view engine", "ejs");
 app.listen(3000, () => console.log("Server is running on port 3000"));
