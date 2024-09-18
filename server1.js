@@ -8,7 +8,7 @@ const app = http.createServer((req, res) => {
       fs.readFile("./data.json", "utf-8")
         .then((data) => {
           if (!data) {
-            console.log("there is an error gettin the data");
+            console.log("there is an error getting the data");
           }
           res.end(data);
         })
